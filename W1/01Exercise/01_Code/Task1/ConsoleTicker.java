@@ -1,4 +1,4 @@
-package Task1;
+package task1;
 
 import java.io.Console;
 
@@ -34,9 +34,13 @@ public class ConsoleTicker {
 				throw new RuntimeException(e);
 			}
 		});
+		a.setDaemon(true);
+		b.setDaemon(true);
 		a.start();
 		b.start();
 		c.start();
+		System.out.println("threads startet");
+		c.join(); //nie fertig da while loop
 		System.out.println("main finished");
 		// TODO: Concurrent periodTicker('*', 20);
 	}
